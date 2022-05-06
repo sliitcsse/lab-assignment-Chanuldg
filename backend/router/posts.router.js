@@ -5,7 +5,7 @@ const postsRouter = new Router({
   prefix: "/posts",
 });
 
-//POST Method
+//POST
 postsRouter.post("/", (ctx) => {
   const data = ctx.request.body;
   ctx.body = save(data);
@@ -13,14 +13,14 @@ postsRouter.post("/", (ctx) => {
   ctx.status = 201;
 });
 
-//Get All Datas
+//Return All data
 postsRouter.get("/", (ctx) => {
   ctx.body = getAll();
   ctx.set("Content-Type", "application/json");
   ctx.status = 200;
 });
 
-//Get Data by ID
+//Get the mentioned details by ID
 postsRouter.get("/:id", (ctx) => {
   const id = ctx.params.id;
   ctx.body = get(id);
@@ -28,7 +28,7 @@ postsRouter.get("/:id", (ctx) => {
   ctx.status = 200;
 });
 
-//Update Data by ID
+//Update the given ID details
 postsRouter.put("/:id", (ctx) => {
   const id = ctx.params.id;
   ctx.body = update(id, ctx.request.body);
@@ -36,7 +36,7 @@ postsRouter.put("/:id", (ctx) => {
   ctx.status = 200;
 });
 
-//Delete Data by ID
+//Delete the given ID details
 postsRouter.del("/:id", (ctx) => {
   const id = ctx.params.id;
   deletePost(id);

@@ -8,8 +8,10 @@ import itemsRouter from "./router/items.router.js";
 import promotionsRouter from "./router/promotions.router.js";
 import traderprofileRouter from "./router/traderprofile.router.js";
 
-const app = new Koa();
+const app = new Koa(); //Create Koa Appilcation
+
 app.use(bodyParser());
+
 app.use(cors());
 
 app.use(async (ctx, next) => {
@@ -33,12 +35,12 @@ app.use(traderprofileRouter.routes()).use(traderprofileRouter.allowedMethods());
 
 app.use((ctx) => {
   ctx.set("Content-Type", "text/html");
-  ctx.body = `<h3>Not Found</h3>`;
+  ctx.body = `<h3>Content Not Found</h3>`;
   ctx.status = 404;
 });
 
-app.listen(3000, () => {
-  console.log("Application running on port 3000");
+const port = 3000;
+app.listen(port, () => {
+  console.log("Application running on port ${port}");
 });
 
-// http://localhost:3000/

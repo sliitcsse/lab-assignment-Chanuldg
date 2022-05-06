@@ -11,7 +11,9 @@ const traderprofileRouter = new Router({
   prefix: "/traderprofiles",
 });
 
-//POST Method
+
+
+//POST
 traderprofileRouter.post("/", (ctx) => {
   const data = ctx.request.body;
   ctx.body = save(data);
@@ -19,14 +21,18 @@ traderprofileRouter.post("/", (ctx) => {
   ctx.status = 201;
 });
 
-//Get All Datas
+
+
+//Get all the 
+//traders details
 traderprofileRouter.get("/", (ctx) => {
   ctx.body = getAll();
   ctx.set("Content-Type", "application/json");
   ctx.status = 200;
 });
 
-//Get Data by ID
+//Get the traders 
+//details by ID
 traderprofileRouter.get("/:id", (ctx) => {
   const id = ctx.params.id;
   ctx.body = get(id);
@@ -34,7 +40,10 @@ traderprofileRouter.get("/:id", (ctx) => {
   ctx.status = 200;
 });
 
-//Update Data by ID
+
+
+//Update the traders 
+//details by ID
 traderprofileRouter.put("/:id", (ctx) => {
   const id = ctx.params.id;
   ctx.body = update(id, ctx.request.body);
@@ -42,7 +51,9 @@ traderprofileRouter.put("/:id", (ctx) => {
   ctx.status = 200;
 });
 
-//Delete Data by ID
+
+//delete the trader 
+//details by ID
 traderprofileRouter.del("/:id", (ctx) => {
   const id = ctx.params.id;
   deletePost(id);

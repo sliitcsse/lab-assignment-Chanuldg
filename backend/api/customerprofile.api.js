@@ -24,6 +24,7 @@ export const save = ({
   return customerprofile;
 };
 
+//Get the mentioned customer details
 export const get = (id) => {
   const customerprofile = customerprofiles.get(id);
   if (!customerprofile) {
@@ -32,10 +33,12 @@ export const get = (id) => {
   return customerprofile;
 };
 
+//Get All the Customer Details
 export const getAll = () => {
   return [...customerprofiles.values()];
 };
 
+//Update the Customer Details
 export const update = (
   id,
   { firstname, lastname, username, email, phonenumber, password }
@@ -57,6 +60,7 @@ export const update = (
   return customerprofile;
 };
 
+//Delete the metioned customer details
 export const deletePost = (id) => {
   if (!customerprofiles.has(id)) {
     throw new Error(`Not found for the ID ${id}`);

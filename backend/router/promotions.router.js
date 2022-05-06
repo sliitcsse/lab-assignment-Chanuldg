@@ -11,7 +11,7 @@ const promotionsRouter = new Router({
   prefix: "/promotions",
 });
 
-//POST Method
+//POST
 promotionsRouter.post("/", (ctx) => {
   const data = ctx.request.body;
   ctx.body = save(data);
@@ -19,14 +19,14 @@ promotionsRouter.post("/", (ctx) => {
   ctx.status = 201;
 });
 
-//Get All Datas
+//Return all the item promos
 promotionsRouter.get("/", (ctx) => {
   ctx.body = getAll();
   ctx.set("Content-Type", "application/json");
   ctx.status = 200;
 });
 
-//Get Data by ID
+//Get the specific promo details by ID
 promotionsRouter.get("/:id", (ctx) => {
   const id = ctx.params.id;
   ctx.body = get(id);
@@ -34,7 +34,7 @@ promotionsRouter.get("/:id", (ctx) => {
   ctx.status = 200;
 });
 
-//Update Data by ID
+//Update the given Promo details by ID
 promotionsRouter.put("/:id", (ctx) => {
   const id = ctx.params.id;
   ctx.body = update(id, ctx.request.body);
@@ -42,7 +42,7 @@ promotionsRouter.put("/:id", (ctx) => {
   ctx.status = 200;
 });
 
-//Delete Data by ID
+//Delete the promo details by ID
 promotionsRouter.del("/:id", (ctx) => {
   const id = ctx.params.id;
   deletePost(id);

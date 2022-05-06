@@ -5,7 +5,7 @@ const itemsRouter = new Router({
   prefix: "/items",
 });
 
-//POST Method
+//Method POST
 itemsRouter.post("/", (ctx) => {
   const data = ctx.request.body;
   ctx.body = save(data);
@@ -13,14 +13,15 @@ itemsRouter.post("/", (ctx) => {
   ctx.status = 201;
 });
 
-//Get All Datas
+
+//Return All items
 itemsRouter.get("/", (ctx) => {
   ctx.body = getAll();
   ctx.set("Content-Type", "application/json");
   ctx.status = 200;
 });
 
-//Get Data by ID
+//Return metioned item details by ID
 itemsRouter.get("/:id", (ctx) => {
   const id = ctx.params.id;
   ctx.body = get(id);
@@ -28,7 +29,7 @@ itemsRouter.get("/:id", (ctx) => {
   ctx.status = 200;
 });
 
-//Update Data by ID
+//Update the metioned item details by ID
 itemsRouter.put("/:id", (ctx) => {
   const id = ctx.params.id;
   ctx.body = update(id, ctx.request.body);
@@ -36,7 +37,7 @@ itemsRouter.put("/:id", (ctx) => {
   ctx.status = 200;
 });
 
-//Delete Data by ID
+//Delete the mentioned item details by ID
 itemsRouter.del("/:id", (ctx) => {
   const id = ctx.params.id;
   deletePost(id);
