@@ -7,7 +7,7 @@
   "scripts": {
     "start": "nodemon app.js"
   },
-  "author": "Chanul-IT20218980",
+  "author": "Chanul-IT20218980-Sample",
   "license": "ISC",
   "dependencies": {
     "@koa/cors": "^3.3.0",
