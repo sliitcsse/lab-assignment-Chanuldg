@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 function CreateCuatomerProfile() {
   const [firstname, setFirstName] = useState();
   const [lastname, setLastName] = useState();
-  const [username, setUserName] = useState();
   const [email, setEmail] = useState();
+  const [username, setUserName] = useState();
   const [phonenumber, setPhoneNumber] = useState();
   const [password, setPassword] = useState();
   const [confirmpassword, setConfirmPassword] = useState();
@@ -18,8 +18,8 @@ function CreateCuatomerProfile() {
     const artical = {
       firstname: firstname,
       lastname: lastname,
-      username: username,
       email: email,
+      username: username,
       phonenumber: phonenumber,
       password: password,
       confirmpassword: confirmpassword,
